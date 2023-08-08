@@ -25,16 +25,17 @@ window.onload = function() {
   cartas();
 
   document.getElementById("carta");
-
-  function modifyBoxWidth(input) {
-    var box = document.getElementById("carta");
-    box.style.width = input.value + "px";
+  function cambiarMedidas(event) {
+    event.preventDefault();
+    let ancho = document.getElementById("ancho").value;
+    let altura = document.getElementById("Altura").value;
+    // Ancho
+    document.getElementById("Boton").style.width = ancho + "px";
+    document.getElementById("carta").style.width = ancho + "px";
+    // Alto
+    document.getElementById("Boton").style.height = altura + "px";
+    document.getElementById("carta").style.height = altura + "px";
   }
-
-  const myBox = document.querySelector("carta");
-  const myInput = document.querySelector("ancho");
-  myInput.addEventListener("change", modifyBoxWidth());
-  //  => {
-  //   myBox.style.width = myInput.value + "px";
-  // });
+  let cambiar = document.getElementById("cambiar");
+  cambiar.addEventListener("click", cambiarMedidas);
 };
